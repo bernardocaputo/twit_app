@@ -1,2 +1,11 @@
 @import "materialize";
 @import "material_icons";
+
+.footer{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:15%;
+    width:100%;
+    background-color: #1E88E5;
+}
