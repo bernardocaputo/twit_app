@@ -20,7 +20,7 @@ RSpec.describe TwitsController, type: :controller do
     it "redirects to sign_in page when user is not logged in" do
       sign_out @current_user
       get :index
-      expect(response).to redirect_to('users/sign_in')
+      expect(response).to have_http_status(:unauthorized)
     end
   end
 
@@ -54,14 +54,6 @@ RSpec.describe TwitsController, type: :controller do
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
-
-    context "Not current_user" do
-      it "returns forbidden" do
-        @bad_user_twit_attributes = attributes_for(:twit)
-        post :create, params: { twit: @bad_user_twit_attributes }
-        expect(response).to have_http_status(:forbidden)
-      end
-    end
   end
 
 
@@ -93,7 +85,7 @@ RSpec.describe TwitsController, type: :controller do
       it "returns 404 when Twit is not found" do
         @new_twit_attributes = attributes_for(:twit)
         put :update, params: { id: 0, twit: @new_twit_attributes }
-        expect(response).to have_http_status(:not_found)
+        expect(response).to redirect_to('/')
       end
     end
 
@@ -114,7 +106,7 @@ RSpec.describe TwitsController, type: :controller do
         @twit = create(:twit, user: @current_user)
         expect{
           delete :destroy, params: { id: @twit.id }
-        }.to change(Twit, :count).by(1)
+        }.to change(Twit, :count).by(-1)
       end
 
       it "returns status success when deleted correctly" do
@@ -125,7 +117,7 @@ RSpec.describe TwitsController, type: :controller do
 
       it "not found when cant find twit" do
         delete :destroy, params: { id: 0 }
-        expect(response).to have_http_status(:not_found)
+        expect(response).to redirect_to('/')
       end
 
       it "returns 403 when not current_user" do
