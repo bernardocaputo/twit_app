@@ -5,7 +5,7 @@
     <ul class="right hide-on-med-and-down">
       <% if current_user %>
       <!-- <li> <%= link_to('Profile', new_user_session_path) %></li> -->
-      <li><a href="/">Ajeitar dps do controller</a></li>
+        <li><%= link_to('Profile', twits_path)%></li>
         <li>  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
       <% else %>
         <li> <%= link_to('Login', new_user_session_path) %></li>
@@ -15,7 +15,7 @@
     <ul class="side-nav" id="mobile-demo">
       <% if current_user %>
         <!-- <li> <%= link_to('Profile', new_user_session_path) %></li> -->
-        <li><a href="/">Ajeitar dps do controller</a></li>
+        <li> <%= link_to('Profile', twits_path)%></li>
         <li> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
       <% else %>
         <li> <%= link_to('Login', new_user_session_path) %></li>
