@@ -12,7 +12,7 @@ before_action :owner?, only: [:update, :destroy]
     @twit = Twit.new(twit_params)
     respond_to do |format|
       if @twit.save
-        format.json { render json: @twit }
+        format.json { render :show, status: :created }
       else
         format.json { render json: @twit.errors, status: :unprocessable_entity }
       end
