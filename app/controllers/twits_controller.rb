@@ -22,7 +22,7 @@ before_action :owner?, only: [:update, :destroy]
   def update
     respond_to do |format|
       if @twit.update(twit_params)
-        format.json { render json: true }
+        format.json { render :show, status: :accepted }
       else
         format.json { render json: @twit.errors, status: :unprocessable_entity }
       end
