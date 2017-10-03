@@ -9,7 +9,7 @@ ENV RAILS_ROOT /twit_app
 WORKDIR $RAILS_ROOT
 
 # create log directory
-# RUN mkdir log
+RUN mkdir log
 
 # copy over static assets
 COPY public public/
