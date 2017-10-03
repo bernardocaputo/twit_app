@@ -5,7 +5,6 @@ before_action :owner?, only: [:update, :destroy]
 
 
   def index
-    p 'stou auqi'
     @twits = Twit.newest_first
   end
 
