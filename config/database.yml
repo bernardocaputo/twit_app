@@ -83,4 +83,3 @@ test:
 production:
   <<: *default
   database: twit_app_production
-  username: twit_app
