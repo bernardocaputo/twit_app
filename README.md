@@ -1,4 +1,4 @@
-Twit App
+<strong>Twit App</strong>
 
 This app has the purpose of being a twitter clone reproducing its features and serving as a study for me.
 
