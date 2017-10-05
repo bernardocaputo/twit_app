@@ -2,11 +2,11 @@
 ![rails](https://img.shields.io/badge/Rails-5.0.1-red.svg)
 ![ruby](https://img.shields.io/badge/Ruby-2.4.0-red.svg)
 
-## Twit App
+# Twit App
 
 This app has the purpose of being a twitter clone reproducing its features and serving as a study for me.
 
-# Technology:
+## Technology:
 
 - [Rails](http://rubyonrails.org/)
 - [Docker](https://docs.docker.com/)
@@ -18,11 +18,11 @@ This app has the purpose of being a twitter clone reproducing its features and s
 - [Nginx](https://codeship.com/)
 - [Docker-machine](https://docs.docker.com/machine/)
 
-# 1. Clone the project
+## 1. Clone the project
 ```cmd
 git clone git@github.com:bernardocaputo/twit_app.git
 ```
-# 2. Installing:
+## 2. Installing:
 ```cmd
 cd twit_app
 docker-compose build
