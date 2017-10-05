@@ -22,7 +22,7 @@ This app has the purpose of being a twitter clone reproducing its features and s
 ```cmd
 git clone git@github.com:bernardocaputo/twit_app.git
 ```
-# 2.Installing:
+# 2. Installing:
 ```cmd
 cd twit_app
 docker-compose build
