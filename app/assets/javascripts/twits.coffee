@@ -36,8 +36,11 @@ insert_twit = (id, content, username) ->
   $('#twit_list').prepend(
     '<div class="card" id="card_' + id + '">' +
         '<div class="card-content">' +
-          '<span class="card-title"> @' + username + '</span>' +
-            '<p id="content_' + id + '"> ' + content + ' </p>' +
+          '<div class="row">' +
+            '<span class="col s6 m6 l6 card-title"> @' + username + '</span>' +
+            '<span class="col s6 m6 l6 right-align">' + "Just Now" + '</span>' +
+          '</div>' +
+          '<p id="content_' + id + '"> ' + content + ' </p>' +
         '</div>' +
         '<div class="card-action">' +
           '<a class="left edit_twit" href="#" id="' + id + '">' +
@@ -65,20 +68,23 @@ $(document).on 'turbolinks:load', ->
           }
         }
         success: (data, text, jqXHR) ->
-          console.log(data)
-          replace_twit(data['id'], data['content'], data['user']['username'])
+          time = $('#time_' + data['id']).text()
+          replace_twit(data['id'], data['content'], time, data['user']['username'])
           Materialize.toast('Twit atualizado', 4000, 'green')
         error: (jqXHR, textStatus, errorThrown) ->
           console.log(errorThrown)
           Materialize.toast('Problema na hora de atualizar o Twit', 4000, 'red')
     return false
 
-replace_twit = (id, content, username) ->
+replace_twit = (id, content, created, username) ->
   $('#card_' + id).replaceWith(
     '<div class="card" id="card_' + id + '">' +
         '<div class="card-content">' +
-          '<span class="card-title"> @' + username + '</span>' +
-            '<p id="content_' + id + '"> ' + content + ' </p>' +
+          '<div class="row">' +
+            '<span class="col s6 m6 l6 card-title"> @' + username + '</span>' +
+            '<span class="col s6 m6 l6 right-align" id="time_' + id + '">' + created + '</span>' +
+          '</div>' +
+          '<p id="content_' + id + '"> ' + content + ' </p>' +
         '</div>' +
         '<div class="card-action">' +
           '<a class="left edit_twit" href="#" id="' + id + '">' +
