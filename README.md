@@ -1,25 +1,31 @@
-<strong>Twit App</strong>
+![rails](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
+![rails](https://img.shields.io/badge/Rails-5.0.1-red.svg)
+![ruby](https://img.shields.io/badge/Ruby-2.4.0-red.svg)
+
+## Twit App
 
 This app has the purpose of being a twitter clone reproducing its features and serving as a study for me.
 
-Technology:
+# Technology:
 
-Rails
-Docker
-Devise
-Rspec
-PostgreSQL
-Materialize
-NginX
-docker-machine
+- [Rails](http://rubyonrails.org/)
+- [Docker](https://docs.docker.com/)
+- [Devise](https://rubygems.org/gems/devise/versions/4.2.0)
+- [Rspec](http://http://rspec.info/)
+- [Factory Girl](https://github.com/thoughtbot/factory_girl)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Materialize](http://materializecss.com/)
+- [Nginx](https://codeship.com/)
+- [Docker-machine](https://docs.docker.com/machine/)
 
-1. Clone the project
-
+# 1. Clone the project
+```cmd
 git clone git@github.com:bernardocaputo/twit_app.git
-
-2.Installing:
-
-1. cd twit_app
-1. docker-compose build
-2. docker-compose run --rm app bundle exec rake db:create db:migrate
-3. docker-compose up
+```
+# 2.Installing:
+```cmd
+cd twit_app
+docker-compose build
+docker-compose run --rm app bundle exec rake db:create db:migrate
+docker-compose up
+```
