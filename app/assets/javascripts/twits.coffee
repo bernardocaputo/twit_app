@@ -38,7 +38,7 @@ insert_twit = (id, content, username) ->
         '<div class="card-content">' +
           '<div class="row">' +
             '<span class="col s6 m6 l6 card-title"> @' + username + '</span>' +
-            '<span class="col s6 m6 l6 right-align">' + "Just Now" + '</span>' +
+            '<span class="col s6 m6 l6 right-align" id="time_' + id + '">' + 'Just Now' + '</span>' +
           '</div>' +
           '<p id="content_' + id + '"> ' + content + ' </p>' +
         '</div>' +
