@@ -30,7 +30,7 @@ docker-compose run --rm app bundle exec rake db:create db:migrate
 docker-compose up
 ```
 
-##3. Testing:
+## 3. Testing:
 ```cmd
 docker-compose run --rm app bundle exec rspec 
 ```
